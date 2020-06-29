@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://as207960.net/assets/css/bootstrap.css">
+<link rel="icon" href="{{ "/favicon.svg" | relative_url }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        section.stripe {
+            position: relative;
+        }
+        section.stripe::before, section.stripe::after {
+            background: inherit;
+            top: 0;
+            content: '';
+            display: block;
+            height: 50%;
+            left: 0;
+            position: absolute;
+            right: 0;
+            transform: skewY(-3deg);
+            transform-origin: 0 100%;
+            z-index: -1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        section.stripe::after {
+            bottom: 0;
+            top: unset;
+            transform: skewY(-3deg);
+            transform-origin: 100% 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ "/" | relative_url }}">
+                <img src="https://as207960.net/assets/img/logo.svg" height="75" alt="">
+                <span class="navbar-brand mb-0 h1">{{ site.title }}</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <span class="navbar-text" id="nav-greeting" style="display: none"></span>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ "/about/" | relative_url }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ "/blog/" | relative_url }}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ "/contact/" | relative_url }}">Contact</a>
+                    </li>
+                    <li class="nav-item" id="nav-login">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item" id="nav-logout" style="display: none">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {{ content }}
+    <footer class="footer">
+        <div class="container my-4">
+            <div class="row">
+                <div class="col order-2 order-md-1 col-12 col-md-8">
+                    <p>
+                        <span class="text-muted"><a href="/contact/">Contact Us</a></span> |
+                        <span class="text-muted"><a href="mailto:noc@as207960.net">Network Operation Center</a></span>
+                    </p>
+                    <p>
+                        <span class="text-muted"><a href="https://as207960.net/assets/docs/AS207960_T_C_s.pdf">Terms &amp; Conditions</a></span> |
+                        <span class="text-muted"><a href="https://as207960.net/assets/docs/privacy_notice.pdf">Privacy Notice</a></span>
+                    </p>
+                    <p>
+                        AS207960 Cyfyngedig, Trading as {{ site.title }}, is a limited company registered in Wales under company number <a href="https://beta.companieshouse.gov.uk/company/12417574">12417574</a>
+                    </p>
+                </div>
+                <div class="col order-1 order-md-2 mb-3 mb-md-0 col-12 col-md-4">
+                    <a href="https://twitter.com/AS_207960">
+                        <img src="{{ "/assets/img/Twitter_Social_Icon_Rounded_Square_Color.svg" | relative_url }}" height="50" alt="">
+                    </a>
+                </div>
+            </div>
+            <p class="text-center">
+                Copyright &copy; {{ 'now' | date: "%Y" }}
+            </p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://sso.as207960.net/auth/js/keycloak.js"></script>
+    <script>
+        var keycloak = new Keycloak("{{ "/keycloak.json" | relative_url }}");
+        keycloak.init({
+            onLoad: 'check-sso',
+            silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
+        });
+
+        var navLogin = document.getElementById('nav-login');
+        var navLogout = document.getElementById('nav-logout');
+        var navGreeting = document.getElementById('nav-greeting');
+
+        navLogin.getElementsByTagName("a")[0].addEventListener('click', function () {
+           keycloak.login();
+        });
+        navLogout.getElementsByTagName("a")[0].addEventListener('click', function () {
+           keycloak.logout();
+        });
+        keycloak.onAuthSuccess = function () {
+            navLogin.style.display = 'none';
+            navLogout.style.display = 'block';
+            keycloak.loadUserProfile().then(function(profile) {
+                navGreeting.innerText = `Hello ${profile.firstName}!`;
+                navGreeting.style.display = 'block';
+            });
+            var event = new Event('login');
+            window.dispatchEvent(event);
+        };
+        keycloak.onAuthLogout = function () {
+            navLogin.style.display = 'block';
+            navLogout.style.display = 'none';
+            navGreeting.style.display = 'none';
+            var event = new Event('logout');
+            window.dispatchEvent(event);
+        }
+    </script>
+</body>
+</html>

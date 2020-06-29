@@ -1,0 +1,21 @@
+---
+layout: page
+title: Blog
+---
+
+<h1>The {{ site.title }} blog</h1>
+<p class="lead">
+    Bringing you the finest, hand crafted, artisan memes interspersed with updates from our team
+</p>
+
+{% for post in site.posts %}
+    <hr>
+
+    <div class="mx-auto" style="max-width: 600px;">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+
+        <p>
+            {{ post.excerpt }}
+        </p>
+    </div>
+{% endfor %}
