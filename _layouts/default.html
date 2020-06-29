@@ -16,7 +16,8 @@
     <meta name="og:locale" content="en_GB" />
     <meta name="og:type" content="website" />
     {% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
-    <meta name="og:description" content="{{ page.excerpt | strip_html }}" />{% endif %}
+    <meta name="og:description" content="{{ page.excerpt | strip_html }}" />
+    <meta name="description" content="{{ page.excerpt | strip_html }}"/>{% endif %}
     {% if page.creator_twitter %}<meta name="twitter:creator" content="{{ page.creator_twitter }}" />{% endif %}
 
     <style>
