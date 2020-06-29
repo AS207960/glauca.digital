@@ -5,6 +5,7 @@ date:   2020-06-26
 author: "Q &#x1F9D9;&#x200D;&#x2640;&#xFE0F;"
 author_role: "Witch in Chief"
 author_img: "q.png"
+creator_twitter: "@TheEnbyperor"
 ---
 
 Hello there! We're Glauca, and we're building a better interneting experience.
@@ -15,7 +16,7 @@ We think we can do better. We won't get in the way of what you want to do
 
 ## What novel features can you actually offer?
 There's really not much that can be added to domain registration, all it really is essence is an expensive database
-entry (the database being DNS). Whilst we don't think we can offer anything absolutely revolutionary, we wan't be
+entry (the database being DNS). Whilst we don't think we can offer anything absolutely revolutionary, we want to be
 unique in the way we interact with you; as a customer and a person, not as a means to profit.
 
 We won't mess you around and we'll try our best to make everything as crystal clear as possible (we've got the hard
