@@ -76,6 +76,9 @@
                     <li class="nav-item" id="nav-logout" style="display: none">
                         <a class="nav-link" href="#">Logout</a>
                     </li>
+                    <li class="nav-item" id="nav-account" style="display: none">
+                        <a class="nav-link" href="https://sso.as207960.net/auth/realms/master/account">Account management</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -121,6 +124,7 @@
 
         var navLogin = document.getElementById('nav-login');
         var navLogout = document.getElementById('nav-logout');
+        var navAccount = document.getElementById('nav-account');
         var navGreeting = document.getElementById('nav-greeting');
 
         navLogin.getElementsByTagName("a")[0].addEventListener('click', function () {
@@ -132,6 +136,7 @@
         keycloak.onAuthSuccess = function () {
             navLogin.style.display = 'none';
             navLogout.style.display = 'block';
+            navAccount.style.display = 'block';
             keycloak.loadUserProfile().then(function(profile) {
                 navGreeting.innerText = `Hello ${profile.firstName}!`;
                 navGreeting.style.display = 'block';
@@ -143,6 +148,7 @@
             navLogin.style.display = 'block';
             navLogout.style.display = 'none';
             navGreeting.style.display = 'none';
+            navAccount.style.display = 'none';
             var event = new Event('logout');
             window.dispatchEvent(event);
         }
