@@ -6,6 +6,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jquery-3.2.1.slim" level="application" />
     <orderEntry type="library" name="keycloak" level="application" />
+    <orderEntry type="module" module-name="as207960.net" />
+    <orderEntry type="module" module-name="as207960-bootstrap" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

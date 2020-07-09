@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../as207960-bootstrap/.idea/as207960-bootstrap.iml" filepath="$PROJECT_DIR$/../as207960-bootstrap/.idea/as207960-bootstrap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../as207960.net/.idea/as207960.net.iml" filepath="$PROJECT_DIR$/../as207960.net/.idea/as207960.net.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/glasiarc.net.iml" filepath="$PROJECT_DIR$/.idea/glasiarc.net.iml" />
     </modules>
   </component>
