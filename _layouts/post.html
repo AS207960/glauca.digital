@@ -11,14 +11,14 @@ layout: default
     <hr>
     <div class="card text-center mx-auto" style="max-width: 28rem;">
         <div class="row no-gutters">
+            {% assign person = site.data.people[page.author] %}
             <div class="col-md-4">
-                {% capture author_img %}/assets/img/{{ page.author_img }}{% endcapture %}
-                <img class="card-img-top rounded" src="{{ author_img | relative_url }}">
+                <img class="card-img-top rounded" src="{{ person.picture | relative_url }}">
             </div>
             <div class="col-md-8">
                 <div class="card-body d-flex justify-content-center flex-column h-100">
-                    <h5 class="card-title">{{ page.author }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ page.author_role }}</h6>
+                    <h5 class="card-title">{{ person.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ person.role }}</h6>
                 </div>
             </div>
         </div>

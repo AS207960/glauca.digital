@@ -78,33 +78,23 @@ permalink: /about/
     <h3>{{ site.title }} is run by these wonderful human beings</h3>
 
     <div class="row mt-3">
-        <div class="col">
-            <div class="card text-center mx-auto" style="max-width: 18rem;">
-                <img class="card-img-top" src="{{ "/assets/img/q.png" | relative_url }}">
-                <div class="card-body">
-                    <h5 class="card-title">Q &#x1F9D9;&#x200D;&#x2640;&#xFE0F;</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Witch in Chief</h6>
+
+        {% for person_id in site.data.people %}
+            {% assign person = person_id[1] %}
+            <div class="col">
+                <div class="card text-center mx-auto" style="max-width: 18rem;">
+                    <img class="card-img-top" src="{{ person.picture | relative_url }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ person.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ person.role }}</h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ person.locale }}</li>
+                        <li class="list-group-item">Twitter: <a href="https://twitter.com/{{ person.twitter }}">@{{ person.twitter }}</a></li>
+                        <li class="list-group-item">GitHub: <a href="https://github.com/{{ person.github }}">{{ person.github }}</a></li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F; cy_CY</li>
-                    <li class="list-group-item">Twitter: <a href="https://twitter.com/TheEnbyperor">@TheEnbyperor</a></li>
-                    <li class="list-group-item">GitHub: <a href="https://github.com/theenbyperor">TheEnbyperor</a></li>
-                </ul>
             </div>
-        </div>
-        <div class="col">
-            <div class="card text-center mx-auto" style="max-width: 18rem;">
-                <img class="card-img-top" src="{{ "/assets/img/alfie.jpeg" | relative_url }}">
-                <div class="card-body">
-                    <h5 class="card-title">Alfie &#x1F468;&#x200D;&#x1F4BB;</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">BGP Overlord</h6>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F; en_GB</li>
-                    <li class="list-group-item">Twitter: <a href="https://twitter.com/LordBonzi">@LordBonzi</a></li>
-                    <li class="list-group-item">GitHub: <a href="https://github.com/LordBonzi">LordBonzi</a></li>
-                </ul>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>

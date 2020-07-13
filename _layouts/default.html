@@ -20,8 +20,7 @@
     {% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
     <meta name="og:description" content="{{ page.excerpt | strip_html }}" />
     <meta name="description" content="{{ page.excerpt | strip_html }}"/>{% endif %}
-    {% if page.creator_twitter %}<meta name="twitter:creator" content="{{ page.creator_twitter }}" />{% endif %}
-
+    {% if page.author %}<meta name="twitter:creator" content="@{{ site.data.people[page.author].twitter }}" />{% endif %}
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -56,6 +55,9 @@
                     </li>
                     <li class="nav-item nav-account" style="display: none">
                         <a class="nav-link" href="https://billing.as207960.net">Billing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://docs.glau.ca">Docs</a>
                     </li>
                 </ul>
             </div>

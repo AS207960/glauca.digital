@@ -2,10 +2,7 @@
 layout: post
 title:  "Introducing Glauca"
 date:   2020-06-26
-author: "Q &#x1F9D9;&#x200D;&#x2640;&#xFE0F;"
-author_role: "Witch in Chief"
-author_img: "q.png"
-creator_twitter: "@TheEnbyperor"
+author: q
 ---
 
 Hello there! We're Glauca, and we're building a better interneting experience.

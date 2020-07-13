@@ -1,0 +1,15 @@
+q:
+  name: "Q &#x1F9D9;&#x200D;&#x2640;&#xFE0F;"
+  role: "Witch in Chief"
+  picture: "/assets/img/q.png"
+  locale: "&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F; cy_GB-WLS"
+  twitter: "TheEnbyperor"
+  github: "TheEnbyperor"
+
+alfie:
+  name: "Alfie &#x1F468;&#x200D;&#x1F4BB;"
+  role: "BGP Overlord"
+  picture: "/assets/img/alfie.jpeg"
+  locale: "&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F; en_GB"
+  twitter: "LordBonzi"
+  github: "LordBonzi"
