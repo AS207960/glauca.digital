@@ -5,12 +5,12 @@ permalink: /about/
 ---
 
 <div class="container my-3">
-<h1 class="display-4">A bit more about us</h1>
+    <h1 class="display-4">A bit more about us</h1>
 </div>
 
 <section class="stripe text-white my-3 my-lg-5">
     <div class="container">
-        <h4 class="text-white">glauca</h4>
+        <h4 class="text-white mt-2">glauca</h4>
         <p style="font-family: sans-serif">/ˈɡlau̯.ka/</p>
         <i>Adjective</i>
         <b class="text-white">m</b>
@@ -36,12 +36,12 @@ permalink: /about/
     <hr>
 
     <div class="mx-auto" style="max-width: 600px;">
-    <h2>Zero fuss</h2>
+        <h2>Zero fuss</h2>
 
-    <p>
-        Pricing is often complicated, befuddling, hazy etc. You get the point, it doesn't make sense. We'll tell you in
-        simple terms what you'll be paying and when, without hiking prices on you purely for sticking with us.
-    </p>
+        <p>
+            Pricing is often complicated, befuddling, hazy etc. You get the point, it doesn't make sense. We'll tell you in
+            simple terms what you'll be paying and when, without hiking prices on you purely for sticking with us.
+        </p>
     </div>
 
     <hr>
@@ -80,21 +80,21 @@ permalink: /about/
     <div class="row mt-3">
 
         {% for person_id in site.data.people %}
-            {% assign person = person_id[1] %}
-            <div class="col">
-                <div class="card text-center mx-auto" style="max-width: 18rem;">
-                    <img class="card-img-top" src="{{ person.picture | relative_url }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ person.name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ person.role }}</h6>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{ person.locale }}</li>
-                        <li class="list-group-item">Twitter: <a href="https://twitter.com/{{ person.twitter }}">@{{ person.twitter }}</a></li>
-                        <li class="list-group-item">GitHub: <a href="https://github.com/{{ person.github }}">{{ person.github }}</a></li>
-                    </ul>
+        {% assign person = person_id[1] %}
+        <div class="col">
+            <div class="card text-center mx-auto" style="max-width: 18rem;">
+                <img class="card-img-top" src="{{ person.picture | relative_url }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ person.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ person.role }}</h6>
                 </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ person.locale }}</li>
+                    <li class="list-group-item">Twitter: <a href="https://twitter.com/{{ person.twitter }}">@{{ person.twitter }}</a></li>
+                    <li class="list-group-item">GitHub: <a href="https://github.com/{{ person.github }}">{{ person.github }}</a></li>
+                </ul>
             </div>
+        </div>
         {% endfor %}
     </div>
 </div>
