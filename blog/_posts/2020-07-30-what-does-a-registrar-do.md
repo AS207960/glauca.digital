@@ -44,7 +44,7 @@ Underneath the registry are the registrars. These are companies who maintain a r
 registries and with the end user (you!). They're responsible for customer service and all technical matters
 that can't be handled by the registry.
 
-To summarize here's a graph:
+To summarize here's a graph (with our example registrar ProceedFather):
 ```text
                 *-------*
                 | ICANN |

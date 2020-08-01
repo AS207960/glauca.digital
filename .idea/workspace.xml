@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb71935b-4944-4931-b732-5c127fa26512" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/fruity.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/native.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/switch-test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/verisign-agreement.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/_posts/2020-07-30-what-does-a-registrar-do.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prices.html" beforeDir="false" afterPath="$PROJECT_DIR$/prices.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/_posts/2020-07-30-what-does-a-registrar-do.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog/_posts/2020-07-30-what-does-a-registrar-do.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +74,8 @@
       <workItem from="1594639609645" duration="5796000" />
       <workItem from="1595892094090" duration="15939000" />
       <workItem from="1596123065105" duration="6049000" />
-      <workItem from="1596135598575" duration="8733000" />
+      <workItem from="1596135598575" duration="10926000" />
+      <workItem from="1596227996134" duration="627000" />
     </task>
     <servers />
   </component>
