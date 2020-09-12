@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/../as207960-bootstrap/scss/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/../as207960-bootstrap/scss/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../as207960-bootstrap/scss/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../as207960-bootstrap/scss/custom.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +80,7 @@
       <workItem from="1596227996134" duration="1664000" />
       <workItem from="1597066837548" duration="19720000" />
       <workItem from="1599060708581" duration="641000" />
+      <workItem from="1599598968524" duration="14333000" />
     </task>
     <servers />
   </component>
