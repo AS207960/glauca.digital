@@ -29,7 +29,19 @@ layout: default
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "{{ page.title }}"
+      "headline": "{{ page.title }}",
+      "description": "{{ page.excerpt }}",
+      "datePublished": "{{page.date}}",
+      "dateModified": "{% if page.modified %}{{page.modified}}{% else %}{{page.date}}{% endif %}",
+      "isAccessibleForFree": "True",
+       "author": {
+            "@type": "Person",
+            "name": "{{ person.name }}",
+            "image": {
+                "@type": "ImageObject",
+                "url": "{{ person.picture | absolute_url }}"
+            }
+        }
     }
 </script>
 
