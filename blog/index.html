@@ -19,3 +19,16 @@ title: Blog
         </p>
     </div>
 {% endfor %}
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Blog",
+        "url": "{{ prepend: site.baseurl | prepend: site.url }}",
+        "headline": "{{ site.title }}",
+        "about": "{{ site.description }}",
+        "isAccessibleForFree": "True",
+        "inLanguage": "en-GB",
+        "additionalType": "CreativeWork"
+    }
+</script>
