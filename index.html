@@ -18,22 +18,28 @@ excerpt: "Domains and DNS, just without all the fuss. On a mission to make inter
                         <div class="d-sm-flex">
                             <form id="login-form" style="flex-grow: 1; flex-shrink: 0">
                                 <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="you@example.com" id="signup-email" required>
+                                    <input type="email" class="form-control" placeholder="you@example.com"
+                                           id="signup-email" required>
                                     <div class="input-group-append">
-                                        <button class="btn btn-secondary" type="submit" >Login</button>
+                                        <button class="btn btn-secondary" type="submit">Login</button>
                                     </div>
                                 </div>
                             </form>
-                            <button style="flex-grow: 0; flex-shrink: 1" class="btn btn-primary ml-sm-3 mt-3 mt-sm-0 btn-block" type="button" id="signup-button">Sign up</button>
+                            <button style="flex-grow: 0; flex-shrink: 1"
+                                    class="btn btn-primary ml-sm-3 mt-3 mt-sm-0 btn-block" type="button"
+                                    id="signup-button">Sign up
+                            </button>
                         </div>
                     </div>
                     <div id="post-login-actions" style="display: none;">
                         <div class="row mt-3 mt-lg-5">
                             <div class="col-12 col-md-6">
-                                <a href="https://domains.glauca.digital" class="btn btn-primary btn-lg btn-block">Get your domain</a>
+                                <a href="https://domains.glauca.digital" class="btn btn-primary btn-lg btn-block">Get
+                                    your domain</a>
                             </div>
                             <div class="col12 col-md-6 mt-3 mt-md-0">
-                                <a href="https://dns.glauca.digital" class="btn btn-info btn-lg btn-block">Use our DNS</a>
+                                <a href="https://dns.glauca.digital" class="btn btn-info btn-lg btn-block">Use our
+                                    DNS</a>
                             </div>
                         </div>
                     </div>
@@ -46,13 +52,13 @@ excerpt: "Domains and DNS, just without all the fuss. On a mission to make inter
                             var preLoginActions = document.getElementById('pre-login-actions');
                             var postLoginActions = document.getElementById('post-login-actions');
                             document.getElementById('login-form').addEventListener('submit', function (e) {
-                               keycloak.login({
-                                   loginHint: email.value,
-                               });
-                               e.preventDefault();
+                                keycloak.login({
+                                    loginHint: email.value,
+                                });
+                                e.preventDefault();
                             });
                             document.getElementById('signup-button').addEventListener('click', function () {
-                               keycloak.register();
+                                keycloak.register();
                             });
                             window.addEventListener('login', function () {
                                 preLoginActions.style.display = 'none';
@@ -67,7 +73,8 @@ excerpt: "Domains and DNS, just without all the fuss. On a mission to make inter
                 </div>
             </div>
             <div class="col col-12 mt-3 mt-lg-0 col-lg-6 d-flex align-items-center">
-                <img src="{{ "/assets/img/domain-macbook.png" | relative_url }}" class="mw-100" alt="A macbook with the 'My Domains' page loaded on it, the blue shark mascot pointing at it">
+                <img src="{{ "/assets/img/domain-macbook.png" | relative_url }}" class="mw-100" alt="A macbook with the
+                'My Domains' page loaded on it, the blue shark mascot pointing at it">
             </div>
         </div>
     </div>
@@ -192,12 +199,21 @@ excerpt: "Domains and DNS, just without all the fuss. On a mission to make inter
                     We try to do better than that. Your emails wont go unanswered, and we'll get someone who
                     knows how to fix it in touch with you ASAP.
                 </p>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="text-dark mb-0">
+                            "Their support is fast and knowledgeable and will fix pretty much any bug you encounter."
+                            - <span class="text-muted">Kitted</span>
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="col order-1 order-lg-3 col-12 col-lg-4">
                 <h2 class="display-4 text-white">Customer service that cares</h2>
             </div>
             <div class="col order-2 col-2">
-                <a href="/sharks"><img src="https://as207960.net/assets/img/shark-heart.png" alt="Blue shark mascot holding a light pink heart" class="mw-100"></a>
+                <a href="/sharks"><img src="https://as207960.net/assets/img/shark-heart.png"
+                                       alt="Blue shark mascot holding a light pink heart" class="mw-100"></a>
             </div>
         </div>
     </div>
@@ -205,13 +221,16 @@ excerpt: "Domains and DNS, just without all the fuss. On a mission to make inter
 <section>
     <div class="container py-lg-5">
         <h1 class="display-4 mt-lg-5">Did somebody say <span class="text-gradient purple-pink">API</span>?</h1>
-        <h4>Build whatever you want on Glauca, why not start with our <a href="https://docs.glauca.digital/api/">docs</a>?</h4>
+        <h4>Build whatever you want on Glauca, why not start with our <a
+                href="https://docs.glauca.digital/api/">docs</a>?</h4>
     </div>
 </section>
 <section>
     <div class="container">
-        <h1 class="display-4 mt-5 text-center">Don't take our word for it<span class="text-gradient yellow-orange">.</span></h1>
-        <h2 class="text-center">Listen to what our <span class="text-gradient yellow-orange">happy</span> customers say.</h2>
+        <h1 class="display-4 mt-5 text-center">Don't take our word for it<span
+                class="text-gradient yellow-orange">.</span></h1>
+        <h2 class="text-center">Listen to what our <span class="text-gradient yellow-orange">happy</span> customers say.
+        </h2>
         <div class="row my-5 justify-content-center">
             <div class="col col-12 col-lg-6 d-flex justify-content-center">
                 <div class="card">
@@ -244,6 +263,21 @@ excerpt: "Domains and DNS, just without all the fuss. On a mission to make inter
                             <p class="mb-0">You are so awesome, I don’t know how to explain!</p>
                             <footer class="blockquote-footer">
                                 <span class="text-gradient green-teal">zerosrc</span>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-12 col-lg-6 mt-3 d-flex justify-content-center">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center">
+                        <blockquote class="blockquote text-center mb-0">
+                            <p class="mb-0">
+                                Genuinely one of the best domain and DNS providers I've ever used and I really do
+                                recommend them. Also, sharks!
+                            </p>
+                            <footer class="blockquote-footer">
+                                <span class="text-gradient purple-pink">Kitteh</span>
                             </footer>
                         </blockquote>
                     </div>
