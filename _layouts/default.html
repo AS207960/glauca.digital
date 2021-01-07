@@ -4,172 +4,208 @@
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://as207960.net/assets/css/bootstrap.css">
-    <link rel="icon" href="{{ "/favicon.svg" | relative_url }}">
+    <link rel="icon" href="{{ "
+    /favicon.svg" | relative_url }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{{ "/assets/css/native.css" | relative_url }}" rel="stylesheet">
+    <link href="{{ "
+    /assets/css/native.css" | relative_url }}" rel="stylesheet">
     <style>
         pre.highlight {
             padding: 10px;
             display: flex;
             justify-content: center;
         }
+
         pre.highlight code {
             color: #fff;
             max-width: 100%;
         }
     </style>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="{{ site.twitter }}" />
-    <meta name="twitter:title" content="{{ page.title }} | {{ site.title }}" />
-    <meta name="og:title" content="{{ page.title }} | {{ site.title }}" />
-    <meta name="og:url" content="{{ page.url | absolute_url }}" />
-    <meta property="og:site_name" content="{{ site.title }}" />
-    <meta name="og:locale" content="en_GB" />
-    <meta name="og:type" content="website" />
-    <meta name="twitter:image" content="https://glauca.digital/assets/img/preview-card.png" />
-    <meta name="og:image" content="https://glauca.digital/assets/img/preview-card.png" />
-    {% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
-    <meta name="og:description" content="{{ page.excerpt | strip_html }}" />
-    <meta name="description" content="{{ page.excerpt | strip_html }}"/>{% endif %}
-    {% if page.author %}<meta name="twitter:creator" content="@{{ site.data.people[page.author].twitter }}" />{% endif %}
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="{{ site.twitter }}"/>
+    <meta name="twitter:title" content="{{ page.title }} | {{ site.title }}"/>
+    <meta name="og:title" content="{{ page.title }} | {{ site.title }}"/>
+    <meta name="og:url" content="{{ page.url | absolute_url }}"/>
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta name="og:locale" content="en_GB"/>
+    <meta name="og:type" content="website"/>
+    <meta name="twitter:image" content="https://glauca.digital/assets/img/preview-card.png"/>
+    <meta name="og:image" content="https://glauca.digital/assets/img/preview-card.png"/>
+    {% if page.excerpt %}
+    <meta name="twitter:description" content="{{ page.excerpt | strip_html }}"/>
+    <meta name="og:description" content="{{ page.excerpt | strip_html }}"/>
+    <meta name="description" content="{{ page.excerpt | strip_html }}"/>
+    {% endif %}
+    {% if page.author %}
+    <meta name="twitter:creator" content="@{{ site.data.people[page.author].twitter }}"/>
+    {% endif %}
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="{{ "/" | relative_url }}">
-                <img src="https://as207960.net/assets/img/logo.svg" height="75" alt="">
-                <span class="navbar-brand mb-0 h1">{{ site.title }}</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <span class="navbar-text" id="nav-greeting" style="display: none"></span>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ "/about/" | relative_url }}">About</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+        <img src="https://as207960.net/assets/img/logo.svg" height="75" alt="">
+        <span class="navbar-brand mb-0 h1">{{ site.title }}</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <span class="navbar-text" id="nav-greeting" style="display: none"></span>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ "/about/" | relative_url }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ "/prices/" | relative_url }}">Prices</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ "/blog/" | relative_url }}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ "/contact/" | relative_url }}">Contact</a>
+                </li>
+                <li class="nav-item" id="nav-login">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item" id="nav-logout" style="display: none">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+                <li class="nav-item nav-account" style="display: none">
+                    <a class="nav-link" href="https://portal.glauca.digital">My Services</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{{ content }}
+<footer class="footer">
+    <div class="container my-4">
+        <div class="row">
+            <div class="col order-2 order-md-1 col-12 col-md-8">
+                <p>
+                    <span class="text-muted"><a href="/contact/">Contact Us</a></span> |
+                    <span class="text-muted"><a href="/sharks/">Shark corner</a></span> |
+                    <span class="text-muted"><a href="https://as207960.net">Our Network</a></span> |
+                    <span class="text-muted"><a href="https://whois-web.as207960.net">WHOIS</a></span>
+                </p>
+                <p>
+                    <span class="text-muted"><a href="https://as207960.net/assets/docs/AS207960_T_C_s.pdf">Terms &amp; Conditions</a></span>
+                    |
+                    <span class="text-muted"><a href="https://as207960.net/assets/docs/privacy_notice.pdf">Privacy Notice</a></span>
+                    |
+                    <span class="text-muted"><a href="/payments/">Payment methods</a></span>
+                </p>
+                <p>
+                    AS207960 Cyfyngedig, trading as {{ site.title }}, is:
+                </p>
+                <ul>
+                    <li>
+                        a limited company registered in Wales (&#x2116
+                        <a href="https://find-and-update.company-information.service.gov.uk/company/12417574">12417574</a>)
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ "/prices/" | relative_url }}">Prices</a>
+                    <li>
+                        a registered data controller with the Information Commissioner's Office (&#x2116
+                        <a href="https://as207960.net/assets/docs/ico_registration.pdf">ZA782876</a>)
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ "/blog/" | relative_url }}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ "/contact/" | relative_url }}">Contact</a>
-                    </li>
-                    <li class="nav-item" id="nav-login">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item" id="nav-logout" style="display: none">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-                    <li class="nav-item nav-account" style="display: none">
-                        <a class="nav-link" href="https://portal.glauca.digital">My Services</a>
+                    <li>
+                        registered for VAT in the EU (&#x2116 EU372013983)
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-    {{ content }}
-    <footer class="footer">
-        <div class="container my-4">
-            <div class="row">
-                <div class="col order-2 order-md-1 col-12 col-md-8">
-                    <p>
-                        <span class="text-muted"><a href="/contact/">Contact Us</a></span> |
-                        <span class="text-muted"><a href="/sharks/">Shark corner</a></span> |
-                        <span class="text-muted"><a href="https://as207960.net">Our Network</a></span> |
-                        <span class="text-muted"><a href="https://whois-web.as207960.net">WHOIS</a></span>
-                    </p>
-                    <p>
-                        <span class="text-muted"><a href="https://as207960.net/assets/docs/AS207960_T_C_s.pdf">Terms &amp; Conditions</a></span> |
-                        <span class="text-muted"><a href="https://as207960.net/assets/docs/privacy_notice.pdf">Privacy Notice</a></span> |
-                        <span class="text-muted"><a href="/payments/">Payment methods</a></span>
-                    </p>
-                    <p>
-                        AS207960 Cyfyngedig, trading as {{ site.title }}, is a limited company registered in Wales (&#x2116 <a href="https://find-and-update.company-information.service.gov.uk/company/12417574">12417574</a>).
-                    </p>
-                </div>
-                <div class="col order-1 order-md-2 mb-3 mb-md-0 col-12 col-md-4">
-                    <a href="https://twitter.com/AS_207960" class="no-hover">
-                        <img src="{{ "/assets/img/Twitter_Social_Icon_Rounded_Square_Color.svg" | relative_url }}" height="50" alt="Our Twitter">
-                    </a>
-                    <a href="https://discord.gg/3W9hDwB" class="no-hover">
-                        <img src="{{ "/assets/img/Discord-Logo-Color.svg" | relative_url }}" height="50" alt="Our Discord">
-                    </a>
-                </div>
+            <div class="col order-1 order-md-2 mb-3 mb-md-0 col-12 col-md-4">
+                <a href="https://twitter.com/AS_207960" class="no-hover">
+                    <img src="{{ "/assets/img/Twitter_Social_Icon_Rounded_Square_Color.svg" | relative_url }}"
+                    height="50" alt="Our Twitter">
+                </a>
+                <a href="https://discord.gg/3W9hDwB" class="no-hover">
+                    <img src="{{ "/assets/img/Discord-Logo-Color.svg" | relative_url }}" height="50" alt="Our Discord">
+                </a>
             </div>
-            <div class="row justify-content-center mb-3">
-                <div class="col-auto"><img src="https://as207960.net/assets/img/powered-by-linux.png" style="max-height: 100px;" alt="Badge: Powered By Linux" /></div>
-                <div class="col-auto"><img src="https://as207960.net/assets/img/socks.png" style="max-height: 100px;" alt="Badge with text 'This site was made with PROGRAMMING SOCKS!', some trans flag socks and a pixel art trans pride flag" /></div>
-            </div>
-            <p class="text-center">
-                Copyright &copy; {{ 'now' | date: "%Y" }}
-            </p>
         </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://sso.as207960.net/auth/js/keycloak.js"></script>
-    <script>
-        var keycloak = new Keycloak("{{ "/keycloak.json" | relative_url }}");
-        keycloak.init({
-            onLoad: 'check-sso',
-            silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
-        });
+        <div class="row justify-content-center mb-3">
+            <div class="col-auto"><img src="https://as207960.net/assets/img/powered-by-linux.png"
+                                       style="max-height: 100px;" alt="Badge: Powered By Linux"/></div>
+            <div class="col-auto"><img src="https://as207960.net/assets/img/socks.png" style="max-height: 100px;"
+                                       alt="Badge with text 'This site was made with PROGRAMMING SOCKS!', some trans flag socks and a pixel art trans pride flag"/>
+            </div>
+        </div>
+        <p class="text-center">
+            Copyright &copy; {{ 'now' | date: "%Y" }}
+        </p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://sso.as207960.net/auth/js/keycloak.js"></script>
+<script>
+    var keycloak = new Keycloak("{{ " / keycloak.json
+    " | relative_url }}"
+    )
+    ;
+    keycloak.init({
+        onLoad: 'check-sso',
+        silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
+    });
 
-        var navLogin = document.getElementById('nav-login');
-        var navLogout = document.getElementById('nav-logout');
-        var navsAccount = document.getElementsByClassName('nav-account');
-        var navGreeting = document.getElementById('nav-greeting');
+    var navLogin = document.getElementById('nav-login');
+    var navLogout = document.getElementById('nav-logout');
+    var navsAccount = document.getElementsByClassName('nav-account');
+    var navGreeting = document.getElementById('nav-greeting');
 
-        navLogin.getElementsByTagName("a")[0].addEventListener('click', function () {
-           keycloak.login();
-        });
-        navLogout.getElementsByTagName("a")[0].addEventListener('click', function () {
-           keycloak.logout();
-        });
-        keycloak.onAuthSuccess = function () {
-            navLogin.style.display = 'none';
-            navLogout.style.display = 'block';
-            for (var navAccount of navsAccount) {
-                navAccount.style.display = 'block';
-            }
-            keycloak.loadUserProfile().then(function(profile) {
-                navGreeting.innerText = `Hello ${profile.firstName}!`;
-                navGreeting.style.display = 'block';
-            });
-            var event = new Event('login');
-            window.dispatchEvent(event);
-        };
-        keycloak.onAuthLogout = function () {
-            navLogin.style.display = 'block';
-            navLogout.style.display = 'none';
-            navGreeting.style.display = 'none';
-            for (var navAccount of navsAccount) {
-                navAccount.style.display = 'none';
-            }
-            var event = new Event('logout');
-            window.dispatchEvent(event);
+    navLogin.getElementsByTagName("a")[0].addEventListener('click', function () {
+        keycloak.login();
+    });
+    navLogout.getElementsByTagName("a")[0].addEventListener('click', function () {
+        keycloak.logout();
+    });
+    keycloak.onAuthSuccess = function () {
+        navLogin.style.display = 'none';
+        navLogout.style.display = 'block';
+        for (var navAccount of navsAccount) {
+            navAccount.style.display = 'block';
         }
-    </script>
-    <script async defer data-domain="glauca.digital" src="https://plausible.as207960.net/js/index.js"></script>
-    <script src="https://4k30gb87gx7d.statuspage.io/embed/script.js"></script>
-    <script type="application/ld+json">
-      {
+        keycloak.loadUserProfile().then(function (profile) {
+            navGreeting.innerText = `Hello ${profile.firstName}!`;
+            navGreeting.style.display = 'block';
+        });
+        var event = new Event('login');
+        window.dispatchEvent(event);
+    };
+    keycloak.onAuthLogout = function () {
+        navLogin.style.display = 'block';
+        navLogout.style.display = 'none';
+        navGreeting.style.display = 'none';
+        for (var navAccount of navsAccount) {
+            navAccount.style.display = 'none';
+        }
+        var event = new Event('logout');
+        window.dispatchEvent(event);
+    }
+</script>
+<script async defer data-domain="glauca.digital" src="https://plausible.as207960.net/js/index.js"></script>
+<script src="https://4k30gb87gx7d.statuspage.io/embed/script.js"></script>
+<script type="application/ld+json">
+    {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Glauca",
         "telephone": "+442920102455",
-        "faxNumber": "+442920102455", 
+        "faxNumber": "+442920102455",
         "email": "info@glauca.digital",
         "legalName": "AS207960 Cyfyngedig",
         "url": "https://glauca.digital",
         "logo": "https://as207960.net/assets/img/logo2.png"
-      }
-    </script>
+    }
+</script>
 </body>
 </html>
