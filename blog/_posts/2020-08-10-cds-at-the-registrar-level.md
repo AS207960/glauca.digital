@@ -38,7 +38,7 @@ A select few TLDs are already implementing CDS. The one's we know of are;
 * .sz
 
 Not much is it? So, we've decided to implement CDS at the registrar level and insert the DS records
-into the parent no your behalf. This means any domain, no matter it's TLD, can make use of CDS to setup
+into the parent on your behalf. This means any domain, no matter it's TLD, can make use of CDS to setup
 DNSSEC if its registered with us. As far as we're aware we're the first registrar to offer such a
 service, although some others have expressed interest in the past, but never implemented it.
 

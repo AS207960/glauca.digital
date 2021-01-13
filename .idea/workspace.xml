@@ -44,6 +44,7 @@
     <list default="true" id="cb71935b-4944-4931-b732-5c127fa26512" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/_posts/2020-08-10-cds-at-the-registrar-level.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog/_posts/2020-08-10-cds-at-the-registrar-level.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +139,7 @@
       <workItem from="1605909519714" duration="1261000" />
       <workItem from="1609601170592" duration="1740000" />
       <workItem from="1610034879366" duration="978000" />
-      <workItem from="1610546601508" duration="95000" />
+      <workItem from="1610546601508" duration="460000" />
     </task>
     <servers />
   </component>
