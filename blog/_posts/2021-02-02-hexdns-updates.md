@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A small update to HexDNS"
-date:   2020-02-02
+date:   2021-02-02
 author: q
 ---
 
