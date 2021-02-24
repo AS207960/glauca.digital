@@ -3,4 +3,8 @@ email: info@glauca.digital
 baseurl: ""
 url: "https://glauca.digital"
 twitter: "@GlaucaDigital"
-
+plugins:
+  - jekyll-feed
+feed:
+  categories:
+    - blog
