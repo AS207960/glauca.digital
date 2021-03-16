@@ -25,7 +25,7 @@ title: Blog
     {
         "@context": "http://schema.org",
         "@type": "Blog",
-        "url": "{{ prepend: site.baseurl | prepend: site.url }}",
+        "url": "{{ site.url | prepend: site.baseurl }}",
         "headline": "{{ site.title }}",
         "about": "{{ site.description }}",
         "isAccessibleForFree": "True",

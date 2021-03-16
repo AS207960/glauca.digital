@@ -23,18 +23,32 @@ layout: default
             </div>
         </div>
     </div>
+    <hr>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            // this.page.url = "{{ page.url | prepend: site.baseurl }}";
+            this.page.identifier = "{{ page.url }}";
+        };
+        (function () {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://glauca-digital.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 </div>
 
 <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "{{ page.title }}",
-      "description": "{{ page.excerpt }}",
-      "datePublished": "{{page.date}}",
-      "dateModified": "{% if page.modified %}{{page.modified}}{% else %}{{page.date}}{% endif %}",
-      "isAccessibleForFree": "True",
-       "author": {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "{{ page.title }}",
+        "description": "{{ page.excerpt }}",
+        "datePublished": "{{page.date}}",
+        "dateModified": "{% if page.modified %}{{page.modified}}{% else %}{{page.date}}{% endif %}",
+        "isAccessibleForFree": "True",
+        "author": {
             "@type": "Person",
             "name": "{{ person.name }}",
             "image": {
