@@ -8,3 +8,7 @@ plugins:
 feed:
   categories:
     - blog
+
+include:
+  - ".well-known"
+
