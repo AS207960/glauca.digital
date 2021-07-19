@@ -15,7 +15,7 @@ auto-renew for domains (Glauca does by default, so no need to worry there).
 The latter is a more complicated problem to solve, as a domain can be
 stolen in many ways.
 
-One basic (and fee) way to help secure your domain is to set a transfer
+One basic (and free) way to help secure your domain is to set a transfer
 lock on it. This will automatically reject any requests to transfer a
 domain out, but it won't save you from a malicious employee, or a socially
 engineered support agent from changing your NS records to point somewhere
