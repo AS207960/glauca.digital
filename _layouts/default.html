@@ -187,6 +187,7 @@
     var keycloak = new Keycloak("{{ "/keycloak.json" | relative_url }}");
     keycloak.init({
         onLoad: 'check-sso',
+        silentCheckSsoFallback: false,
         silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
     });
 
