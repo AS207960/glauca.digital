@@ -35,7 +35,7 @@ A select few TLDs are already implementing CDS. The one's we know of are;
 * .ch
 * .li
 * .cz
-* .sz
+* .sk
 
 Not much is it? So, we've decided to implement CDS at the registrar level and insert the DS records
 into the parent on your behalf. This means any domain, no matter it's TLD, can make use of CDS to setup
