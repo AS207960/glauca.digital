@@ -9,6 +9,8 @@ feed:
   categories:
     - blog
 
+exclude:
+  - "deploy.sh"
 include:
   - ".well-known"
 
