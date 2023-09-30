@@ -200,38 +200,24 @@
         crossorigin="anonymous"></script>
 <script src="https://sso.as207960.net/auth/js/keycloak.js"></script>
 <script>
-    var keycloak = new Keycloak("{{ "/keycloak.json" | relative_url }}");
-    keycloak.init({
-        onLoad: 'check-sso',
-        silentCheckSsoFallback: false,
-        silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
-    });
+    const navLogin = document.getElementById('nav-login');
+    const navLogout = document.getElementById('nav-logout');
+    const navsAccount = document.getElementsByClassName('nav-account');
+    const navGreeting = document.getElementById('nav-greeting');
 
-    var navLogin = document.getElementById('nav-login');
-    var navLogout = document.getElementById('nav-logout');
-    var navsAccount = document.getElementsByClassName('nav-account');
-    var navGreeting = document.getElementById('nav-greeting');
-
-    navLogin.getElementsByTagName("a")[0].addEventListener('click', function () {
-        keycloak.login();
-    });
-    navLogout.getElementsByTagName("a")[0].addEventListener('click', function () {
-        keycloak.logout();
-    });
-    keycloak.onAuthSuccess = function () {
+    function loggedIn(profile) {
         navLogin.style.display = 'none';
         navLogout.style.display = 'block';
         for (var navAccount of navsAccount) {
             navAccount.style.display = 'block';
         }
-        keycloak.loadUserProfile().then(function (profile) {
-            navGreeting.innerText = `Hello ${profile.firstName}!`;
-            navGreeting.style.display = 'block';
-        });
+        navGreeting.innerText = `Hello ${profile.firstName}!`;
+        navGreeting.style.display = 'block';
         var event = new Event('login');
         window.dispatchEvent(event);
-    };
-    keycloak.onAuthLogout = function () {
+    }
+
+    function loggedOut() {
         navLogin.style.display = 'block';
         navLogout.style.display = 'none';
         navGreeting.style.display = 'none';
@@ -240,6 +226,51 @@
         }
         var event = new Event('logout');
         window.dispatchEvent(event);
+    }
+
+    const profileJson = localStorage.getItem("as207960-auth-profile");
+    if (profileJson !== null) {
+        const profile = JSON.parse(profileJson);
+        loggedIn(profile);
+    }
+
+    const keycloak = new Keycloak("{{ "/keycloak.json" | relative_url }}");
+    keycloak.init({
+        onLoad: 'check-sso',
+        silentCheckSsoFallback: false,
+        silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html',
+        enableLogging: true,
+        pkceMethod: "S256",
+        token: localStorage.getItem("as207960-auth-token"),
+        refreshToken: localStorage.getItem("as207960-auth-refresh-token"),
+        idToken: localStorage.getItem("as207960-auth-id-token"),
+    }).then(authenticated => {
+        if (!authenticated) {
+            loggedOut();
+        }
+    });
+
+    navLogin.getElementsByTagName("a")[0].addEventListener('click', function () {
+        keycloak.login();
+    });
+    navLogout.getElementsByTagName("a")[0].addEventListener('click', function () {
+        keycloak.logout();
+    });
+    keycloak.onAuthSuccess = function () {
+        keycloak.loadUserProfile().then(function (profile) {
+            loggedIn(profile);
+            localStorage.setItem("as207960-auth-profile", JSON.stringify(profile));
+        });
+        localStorage.setItem("as207960-auth-token", keycloak.token);
+        localStorage.setItem("as207960-auth-refresh-token", keycloak.refreshToken);
+        localStorage.setItem("as207960-auth-id-token", keycloak.idToken);
+    };
+    keycloak.onAuthLogout = function () {
+        loggedOut();
+        localStorage.removeItem("as207960-auth-token");
+        localStorage.removeItem("as207960-auth-refresh-token");
+        localStorage.removeItem("as207960-auth-id-token");
+        localStorage.removeItem("as207960-auth-profile");
     }
 </script>
 <script defer data-api="https://s.as207960.net/api/event" data-domain="glauca.digital" src="https://s.as207960.net/js/script.js"></script>
