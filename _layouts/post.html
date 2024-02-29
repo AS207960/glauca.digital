@@ -8,7 +8,7 @@ layout: default
 
         {{ content }}
     </div>
-    <hr>
+    <hr/>
     <div class="card text-center mx-auto" style="max-width: 28rem;">
         <div class="row no-gutters">
             {% assign person = site.data.people[page.author] %}
@@ -23,6 +23,24 @@ layout: default
             </div>
         </div>
     </div>
+    <hr/>
+    <h3>Subscribe to our newsletter</h3>
+    <form method="post" action="https://listmonk.as207960.net/subscription/form">
+        <input type="hidden" name="l" value="13ef2b16-e8e0-4e97-bd13-db669c3d4927" />
+        <div class="row">
+            <div class="col-sm">
+                <label class="visually-hidden" for="subscribe-email">Email</label>
+                <input type="email" name="email" required class="form-control" id="subscribe-email" placeholder="Email"/>
+            </div>
+            <div class="col-sm">
+                <label class="visually-hidden" for="subscribe-name">Name (optional)</label>
+                <input type="text" name="name" class="form-control" id="subscribe-name" placeholder="Name (optional)"/>
+            </div>
+            <div class="col-sm-2">
+                <input type="submit" class="btn btn-primary" value="Subscribe" />
+            </div>
+        </div>
+    </form>
 <!--    <hr>
     <div id="disqus_thread"></div>
     <script>
