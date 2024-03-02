@@ -13,17 +13,18 @@ title: Blog
 <form method="post" action="https://listmonk.as207960.net/subscription/form">
     <input type="hidden" name="l" value="13ef2b16-e8e0-4e97-bd13-db669c3d4927" />
     <div class="row">
-        <div class="col-sm">
+        <div class="col-md">
             <label class="visually-hidden" for="subscribe-email">Email</label>
             <input type="email" name="email" required class="form-control" id="subscribe-email" placeholder="Email"/>
         </div>
-        <div class="col-sm">
+        <div class="col-md mt-2 mt-md-0">
             <label class="visually-hidden" for="subscribe-name">Name (optional)</label>
             <input type="text" name="name" class="form-control" id="subscribe-name" placeholder="Name (optional)"/>
         </div>
-        <div class="col-sm-2">
-            <input type="submit" class="btn btn-primary" value="Subscribe" />
-        </div>
+    </div>
+    <div class="mt-3 text-center">
+        <div class="h-captcha" data-sitekey="9418b1a1-6594-4125-bd98-80b4469d3834"></div>
+        <input type="submit" class="btn btn-primary" value="Subscribe" />
     </div>
 </form>
 
