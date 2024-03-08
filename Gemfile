@@ -24,3 +24,5 @@ install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
 end
 
 
+
+gem "jekyll-get-json", "~> 1.0"

@@ -4,12 +4,69 @@ layout: default
 excerpt: "Domains and DNS, just without all the fuss. On a mission to make interneting just a little easier. Possibly anarchist, definitely antifascist."
 ---
 
+<section class="my-4">
+    <div class="container text-center">
+        <h1 class="display-2">No fuss web</h1>
+        <h1>Domains, DNS, and hosting, <span class="text-gradient teal-indigo">just without fuss</span>.</h1>
+    </div>
+</section>
+<section class="my-4">
+    <div class="container">
+        <div class="text-center mb-3">
+            <h1>Already have something in mind<span class="text-gradient pink-red">?</span></h1>
+            <h2>Discover your <span class="text-gradient purple-pink">perfect domain</span>...</h2>
+        </div>
+        <name-studio api-key="0c0b5c77ab961788c00ddc8668b1de9d" env="prod">
+            <script type="application/json" data-type="name-studio">
+                {
+                    "i18n": {
+                        "en": {
+                            "namestudio-status": {
+                                "btnregister": "Register",
+                                "btnnotavailable": "Unavailable"
+                            },
+                            "namestudio-segment": {
+                                "headerprefixes": "Add a prefix",
+                                "headersuffixes": "Add a suffix"
+                            }
+                        }
+                    },
+                    "tlds": [{% for t in site.data.tlds %}"{{ t }}"{% if forloop.last == false %},{% endif %}{% endfor %}],
+                    "cart-url": "https://domains.glauca.digital/domains/register/$domain.$tld/",
+                    "cart-method": "get",
+                    "styles": {
+                        "colors": {
+                            "base": "#f7fafc",
+                            "accents": "#3182ce",
+                            "availability": "#38a169",
+                            "errors": "#e53e3e"
+                        }
+                    },
+                    "version": {
+                        "actual": "1.31.1-beta",
+                        "major": "1.0"
+                    }
+                }
+            </script>
+        </name-studio>
+        <p class="text-center">
+            Unfortunately, not all TLDs are supported by our search tool. If you can't find what you're looking for,
+            head to our <a href="https://domains.glauca.digital/">domain portal</a> to find your perfect domain.
+        </p>
+    </div>
+</section>
 <section>
     <div class="container">
         <div class="row mm-lg-5">
-            <div class="col col-12 col-lg-6">
-                <h1 class="display-4">No fuss web</h1>
-                <h2>Domains, DNS, and hosting, <span class="text-gradient teal-indigo">just without fuss</span>.</h2>
+            <div class="col col-12 col-lg-6 d-flex flex-column justify-content-center">
+                <div class="my-3">
+                    <a href="https://domains.glauca.digital/domains/transfer/" class="btn btn-secondary btn-lg w-100">
+                        Transfer your domain to us
+                    </a>
+                    <a href="https://domains.glauca.digital/" class="btn btn-primary btn-lg w-100 mt-2">
+                        Go to our domain portal
+                    </a>
+                </div>
                 <div class="mt-3">
                     <div id="pre-login-actions">
                         <p class="lead">
@@ -90,29 +147,6 @@ excerpt: "Domains and DNS, just without all the fuss. On a mission to make inter
                 <p class="mb-0">
                     Setup your passkey in your <a href="https://sso.as207960.net/auth/realms/master/account/#/security/signingin">account settings</a>, or <a href="https://docs.glauca.digital/passkeys/">learn more</a> about Passkeys.
                 </p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="mb-5">
-    <div class="container">
-        <h1>Already have something in mind<span class="text-gradient pink-red">?</span></h1>
-        <h2>Discover your <span class="text-gradient purple-pink">perfect domain</span>...</h2>
-        <div class="row">
-            <div class="col-12 col-md-8">
-                <form action="https://domains.glauca.digital/domains/suggest/" method="get">
-                    <div class="input-group">
-                        <input type="text" name="domain" class="form-control" placeholder="myawesome.website">
-                        <button type="submit" class="btn btn-info">
-                            <span role="img" aria-label="Search">&#x1f50d;</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-12 col-md-4 mt-3 mt-md-0 d-flex">
-                <a href="https://domains.glauca.digital/domains/transfer/" class="btn btn-secondary w-100 d-flex justify-content-center align-items-center">
-                    Transfer to us
-                </a>
             </div>
         </div>
     </div>

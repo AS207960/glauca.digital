@@ -5,6 +5,7 @@ url: "https://glauca.digital"
 twitter: "@GlaucaDigital"
 plugins:
   - jekyll-feed
+  - jekyll-get-json
 feed:
   categories:
     - blog
@@ -14,3 +15,6 @@ exclude:
 include:
   - ".well-known"
 
+jekyll_get_json:
+  - data: tlds
+    json: "https://domains.glauca.digital/data/tlds/"
